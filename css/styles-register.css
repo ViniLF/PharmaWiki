@@ -1,0 +1,186 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+body.dark-theme {
+    background-color: #1a1a1a;
+    color: #ddd;
+}
+
+.main-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.slogan-container {
+    flex: 1;
+    background-color: #e0f7fa;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+body.dark-theme .slogan-container {
+    background: #2a2a2a;
+}
+
+.slogan-container h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.slogan-container p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.slogan-container img {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    max-width: 80%;
+    height: auto;
+    border-radius: 8px;
+}
+
+body.dark-theme .slogan-container img {
+    content: url('images/inicio2.png');
+}
+
+.auth-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 2rem;
+}
+
+body.dark-theme .auth-container {
+    background: #5f5f5f;
+}
+
+.auth-box {
+    background-color: #039696;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 400px;
+}
+
+body.dark-theme .auth-box {
+    background-color: #2a2a2a;
+}
+
+.auth-section h2 {
+    margin-bottom: 1rem;
+    color: #333;
+    text-align: center;
+}
+
+body.dark-theme .auth-section h2 {
+    color: #ddd;
+}
+
+.auth-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.auth-section input {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.auth-section input:focus {
+    outline: none;
+    border-color: #00bf63;
+}
+
+body.dark-theme .auth-section input {
+    background-color: #444;
+    border: 1px solid #555;
+    color: #ddd;
+}
+
+.auth-button {
+    background-color: #007272;
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+body.dark-theme .auth-button {
+    background-color: #00a653;
+}
+
+.auth-button:hover {
+    background-color: #015f5f;
+}
+
+body.dark-theme .auth-button:hover {
+    background-color: #017039;
+}
+
+#go-to-register, #go-to-login {
+    text-decoration: none;
+    color: #5f5f5f;
+    font-weight: bold;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 2px;
+}
+
+#go-to-register:hover, #go-to-login:hover {
+    color: #fff;
+    border-bottom: 2px solid #fff;
+}
+
+body.dark-theme #go-to-register:hover, #go-to-login:hover {
+    color: #fff;
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.theme-toggle .material-symbols-outlined {
+    font-size: 32px;
+    color: #039696;
+    transition: .3s;
+}
+
+.theme-toggle .material-symbols-outlined:hover {
+    color: #015252;
+    scale: 1.2;
+}
+
+body.dark-theme .theme-toggle .material-symbols-outlined {
+    color: #00a653;
+}
+
+body.dark-theme .theme-toggle .material-symbols-outlined:hover {
+    color: #017039;
+    scale: 1.2;
+}

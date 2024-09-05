@@ -1,0 +1,452 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Reset básico para garantir uma aparência consistente */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos gerais */
+body {
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Tema escuro */
+body.dark-theme {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+/* Container geral */
+.headerContainer {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header {
+    background: #fff;
+    color: #333;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    height: 70px;
+    width: auto;
+    transition: fill 0.3s ease;
+    margin-right: auto; /* Garante que a logo fique alinhada à esquerda */
+}
+
+/* Estilo do cabeçalho no modo escuro */
+body.dark-theme header {
+    background: #333; /* Fundo do cabeçalho para o modo escuro */
+    color: #e0e0e0;
+}
+
+nav {
+    margin-left: auto; /* Empurra o nav para a direita */
+}
+
+/* Estilo da lista de itens no nav */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    margin: 0;
+}
+
+nav ul #menu {
+    display: none;
+}
+
+nav ul li {
+    position: relative;
+    margin: 0;
+}
+
+/* Estilo dos links do nav */
+nav ul li a {
+    color: #333; /* Cor do texto dos links no modo claro */
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    font-family: 'Nunito', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 5px;
+    position: relative;
+}
+
+/* Estilo dos links no modo escuro */
+body.dark-theme nav ul li a {
+    color: #e0e0e0; /* Cor do texto dos links no modo escuro */
+    background-color: #333; /* Cor de fundo dos links no modo escuro (opcional) */
+}
+
+/* Estilo para quando o link é hover */
+nav ul li a:hover {
+    background-color: #039696; /* Cor de fundo ao passar o mouse */
+    color: #fff; /* Cor do texto ao passar o mouse */
+    border-radius: 5px;
+}
+
+/* Adiciona um efeito de transição suave */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px; /* Altura da linha de destaque */
+    background: #005f5f; /* Cor da linha de destaque */
+    transform: scaleX(0); /* Inicialmente invisível */
+    transition: transform 0.3s ease;
+}
+
+/* Efeito de destaque para links ativos ou em hover */
+nav ul li a.active::after,
+nav ul li a:hover::after {
+    transform: scaleX(1); /* Linha de destaque visível */
+}
+
+/* Estilo do efeito de destaque no modo escuro */
+body.dark-theme nav ul li a::after {
+    background: #01743d; /* Cor da linha de destaque no modo escuro */
+}
+
+/* Estilo dos títulos */
+h1 {
+    font-family: 'Rubik', sans-serif; /* Fonte para o título principal */
+}
+
+h2 {
+    font-family: 'Nunito', sans-serif; /* Fonte para subtítulos */
+}
+
+/* Estilo do rodapé */
+footer {
+    background: #fff; /* Fundo do rodapé para o modo claro */
+    color: #333;
+    padding: 10px 0;
+    text-align: center;
+}
+
+/* Estilo do rodapé no modo escuro */
+body.dark-theme footer {
+    background: #333; /* Fundo do rodapé para o modo escuro */
+    color: #e0e0e0;
+}
+
+/* Estilo do botão de alternância de tema */
+#theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #333; /* Cor padrão dos ícones no modo claro */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease, transform 0.3s ease;
+    z-index: 1000; /* Garante que o botão fique acima de outros elementos */
+}
+
+/* Estilo do botão no modo escuro */
+body.dark-theme #theme-toggle {
+    color: #e0e0e0; /* Cor dos ícones no modo escuro */
+}
+
+/* Efeito hover no botão de alternância de tema */
+#theme-toggle:hover {
+    color: #039696; /* Cor dos ícones ao passar o mouse */
+    transform: scale(1.1); /* Efeito de ampliação ao passar o mouse */
+}
+
+/* Estilo do botão de alternância de tema no modo escuro */
+body.dark-theme #theme-toggle:hover {
+    color: #00bf63; /* Cor dos ícones ao passar o mouse no modo escuro */
+}
+
+/* Controle da visibilidade dos ícones com base no tema */
+#light-icon {
+    opacity: 1; /* Visível no modo claro */
+}
+
+#dark-icon {
+    opacity: 0; /* Invisível no modo claro */
+}
+
+/* No modo escuro, o ícone claro deve ser invisível e o ícone escuro visível */
+body.dark-theme #light-icon {
+    opacity: 0; /* Invisível no modo escuro */
+}
+
+body.dark-theme #dark-icon {
+    opacity: 1; /* Visível no modo escuro */
+}
+
+/* Estilo dos links dos itens da lista no modo escuro */
+body.dark-theme nav ul li a {
+    color: #e0e0e0; /* Cor do texto dos links no modo escuro */
+    background-color: #333; /* Cor de fundo dos links no modo escuro (opcional) */
+}
+
+/* Estilo dos links dos itens da lista ao passar o mouse no modo escuro */
+body.dark-theme nav ul li a:hover {
+    background-color: #00bf63; /* Cor de fundo ao passar o mouse no modo escuro */
+    color: #000; /* Cor do texto ao passar o mouse no modo escuro */
+}
+
+/* Estilos para a seção intro */
+.intro {
+    padding: 20px;
+    text-align: center;
+    background-color: #e0e0e0; /* Fundo claro para o modo claro */
+    color: #333; /* Cor do texto para o modo claro */
+}
+
+/* Adaptação para o modo escuro */
+body.dark-theme .intro {
+    background-color: #1e1e1e; /* Fundo escuro para o modo escuro */
+    color: #e0e0e0; /* Cor do texto para o modo escuro */
+}
+
+/* Estilos adicionais para os títulos e parágrafos */
+.intro h1 {
+    font-family: 'Rubik', sans-serif;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.intro p {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.1em;
+    margin: 10px 0;
+    padding: 5px 40px;
+}
+
+section.most-wanted h1 {
+    padding: 20px;
+    text-align: center;
+    font-size: 30px;
+}
+
+section.carrossel {
+    position: relative;
+    height: 470px;
+    width: 0 auto;
+    display: flex;
+    align-items: center;
+  }
+
+section.carrossel h2 {
+    text-align: center;
+    padding: 10px;
+}
+
+/* Estilo do carrossel no modo escuro */
+body.dark-theme section.carrossel {
+    background-color: #2c2c2c; /* Fundo escuro para o modo escuro */
+}
+
+  .swiper {
+    width: 950px;
+    align-items: center;
+  }
+  .container {
+    border-radius: 20px;
+  }
+  .card .image {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+  }
+  .card .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 40%;
+  }
+  .card {
+    position: relative;
+    background: #017272e3;
+    border: 3px solid #003a3a;
+    border-radius: 20px;
+  }
+
+  /* Estilo dos cards no modo escuro */
+body.dark-theme .card {
+    background: #161616; /* Cor de fundo dos cards no modo escuro */
+    border: 3px solid #006d38; /* Borda dos cards no modo escuro */
+}
+
+  .card .card-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+  }
+  .card .name-used {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10px;
+    color: #fff;
+  }
+
+/* Estilo dos textos no modo escuro */
+body.dark-theme .name-used {
+    color: #e0e0e0; /* Cor do texto no modo escuro */
+}
+
+  .name-used .name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .name-used .used {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+  }
+  .card .button {
+    display: flex;
+    justify-content: space-around;
+    width: 110%;
+    margin-top: 20px;
+  }
+  .card .button button {
+    font-family: 'Poppins', sans-serif;
+    background: #005f5f;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-weight: 600;
+    padding: 8px 22px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: .3s;
+  }
+  .card .button button:hover {
+    background: #fff;
+    color: #000;
+  }
+
+/* Estilo dos botões no modo escuro */
+body.dark-theme .card .button button {
+    background: #006d38; /* Cor de fundo dos botões no modo escuro */
+}
+
+/* Estilo dos botões ao passar o mouse no modo escuro */
+body.dark-theme .card .button button:hover {
+    background: #00351b; /* Cor dos botões ao passar o mouse no modo escuro */
+    color: #e0e0e0; /* Cor do texto ao passar o mouse no modo escuro */
+}
+
+  .swiper-pagination-bullet {
+    height: 7px;
+    width: 26px;
+    background: #005f5f;
+    border-radius: 25px;
+  }
+
+/* Estilo da paginação no modo escuro */
+body.dark-theme .swiper-pagination-bullet {
+    background: #00796b; /* Cor da paginação no modo escuro */
+}
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: #005f5f;
+    transition: .3s;
+  }
+
+  .swiper-button-next:hover,
+  .swiper-button-prev:hover {
+    color: #002c2c;
+
+  }
+
+/* Estilo dos botões de navegação no modo escuro */
+body.dark-theme .swiper-button-next,
+body.dark-theme .swiper-button-prev {
+    color: #00796b; /* Cor dos botões no modo escuro */
+}
+
+body.dark-theme .swiper-button-next:hover,
+body.dark-theme .swiper-button-prev:hover {
+    color: #002c2c; /* Cor dos botões no modo escuro */
+}
+
+/* Modal Container */
+.modal-container {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4); /* Black background with opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 600px; /* Limit the width */
+    border-radius: 10px;
+    overflow-y: auto; /* Enable vertical scroll if needed */
+    max-height: 80vh; /* Limit height and allow scrolling if needed */
+}
+
+/* Close Button */
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media (max-width: 950px) {
+    .container #logo {
+        width: 150px;
+    }
+
+    nav ul #menu {
+        display: block;
+    }
+
+    nav ul li {
+        display: none;
+    }
+
+    .intro p {
+        padding: 0;
+    }
+}

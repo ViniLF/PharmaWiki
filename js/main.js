@@ -84,3 +84,21 @@ document.querySelectorAll('.aboutMe').forEach(button => {
       openModal(title, composition, func, effects, precautions);
   });
 });
+
+// Verifica se o parâmetro 'login' está na URL
+const urlParams = new URLSearchParams(window.location.search);
+const loginSuccess = urlParams.get('login');
+const registerSuccess = urlParams.get('register');
+
+if (loginSuccess === 'success') {
+    alert('Login efetuado com sucesso!');
+}
+
+if (registerSuccess === 'success') {
+    alert('Registro efetuado com sucesso! Agora, faça login.');
+}
+
+const error = urlParams.get('error');
+if (error === '1') {
+    alert('E-mail ou senha incorretos! Tente novamente.');
+}

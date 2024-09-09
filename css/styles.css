@@ -150,32 +150,34 @@ body.dark-theme footer {
 }
 
 /* Estilo do botão de alternância de tema */
-#theme-toggle {
+#theme-toggle, .logout-icon {
     background: none;
     border: none;
     cursor: pointer;
     font-size: 24px;
-    color: #333; /* Cor padrão dos ícones no modo claro */
+    color: #333;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: color 0.3s ease, transform 0.3s ease;
-    z-index: 1000; /* Garante que o botão fique acima de outros elementos */
+    z-index: 1000;
 }
 
 /* Estilo do botão no modo escuro */
-body.dark-theme #theme-toggle {
+body.dark-theme #theme-toggle,
+body.dark-theme .logout-icon {
     color: #e0e0e0; /* Cor dos ícones no modo escuro */
 }
 
 /* Efeito hover no botão de alternância de tema */
-#theme-toggle:hover {
-    color: #039696; /* Cor dos ícones ao passar o mouse */
-    transform: scale(1.1); /* Efeito de ampliação ao passar o mouse */
+#theme-toggle:hover, .logout-icon:hover {
+    color: #039696;
+    transform: scale(1.1);
 }
 
 /* Estilo do botão de alternância de tema no modo escuro */
-body.dark-theme #theme-toggle:hover {
+body.dark-theme #theme-toggle:hover,
+body.dark-theme .logout-icon:hover {
     color: #00bf63; /* Cor dos ícones ao passar o mouse no modo escuro */
 }
 

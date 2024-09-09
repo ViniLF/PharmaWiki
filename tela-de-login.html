@@ -26,19 +26,19 @@
                 <button id="guest-login" class="auth-button">Entrar como Visitante</button>
                 <div id="login-section" class="auth-section">
                     <h2>Login</h2>
-                    <form id="login-form">
-                        <input type="email" id="login-email" placeholder="E-mail" required>
-                        <input type="password" id="login-password" placeholder="Senha" required>
+                    <form id="login-form" action="login.php" method="POST">
+                        <input type="email" id="login-email" name="email" placeholder="E-mail" required>
+                        <input type="password" id="login-password" name="password" placeholder="Senha" required>
                         <button type="submit" class="auth-button">Entrar</button>
                     </form>
                     <p>Não tem uma conta? <a href="#" id="go-to-register">Registrar-se</a></p>
                 </div>
                 <div id="register-section" class="auth-section" style="display: none;">
                     <h2>Registro</h2>
-                    <form id="register-form">
-                        <input type="text" id="register-username" placeholder="Nome de Usuário" required>
-                        <input type="email" id="register-email" placeholder="E-mail" required>
-                        <input type="password" id="register-password" placeholder="Senha" required>
+                    <form id="register-form" action="register.php" method="POST">
+                        <input type="text" id="register-username" name="username" placeholder="Nome de Usuário" required>
+                        <input type="email" id="register-email" name="email" placeholder="E-mail" required>
+                        <input type="password" id="register-password" name="password" placeholder="Senha" required>
                         <button type="submit" class="auth-button">Registrar</button>
                     </form>
                     <p>Já tem uma conta? <a href="#" id="go-to-login">Entrar</a></p>

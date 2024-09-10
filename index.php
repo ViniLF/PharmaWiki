@@ -23,7 +23,7 @@
             <img id="logo" class="logo" alt="PharmaWiki Logo" src="images/logo-light.svg">
             <nav>
                 <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="index.php" class="active">Home</a></li>
                     <li><a href="#">Medicamentos</a></li>
                     <li><a href="#">Sobre</a></li>
                     <li><a href="#">Contato</a></li>
@@ -32,8 +32,8 @@
                         <span id="dark-icon" class="material-symbols-outlined">dark_mode</span>
                     </button>
                     <span class="material-symbols-outlined" id="menu">menu</span>
-                    <button class="logout-icon" aria-label="Logout botão">
-                      <span class="material-symbols-outlined" id="logout" onclick="window.location.href='logout.php';">logout</span>
+                    <button class="logout-icon" aria-label="Logout botão" id="logout-button">
+                        <span class="material-symbols-outlined" onclick="handleLogout()">logout</span>
                     </button>
                 </ul>
             </nav>

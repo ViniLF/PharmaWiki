@@ -102,3 +102,7 @@ const error = urlParams.get('error');
 if (error === '1') {
     alert('E-mail ou senha incorretos! Tente novamente.');
 }
+
+function handleLogout() {
+  window.location.href = 'logout.php'; // Redireciona para o script de logout
+}

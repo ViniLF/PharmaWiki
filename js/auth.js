@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const themeImage = document.querySelector('.saude1');
 
     guestLoginButton.addEventListener('click', function () {
-        window.location.href = 'index.html';
+        window.location.href = 'index.php';
     });
 
     goToRegisterLink.addEventListener('click', function (e) {

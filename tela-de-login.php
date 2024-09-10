@@ -29,6 +29,12 @@
                     <form id="login-form" action="login.php" method="POST">
                         <input type="email" id="login-email" name="email" placeholder="E-mail" required>
                         <input type="password" id="login-password" name="password" placeholder="Senha" required>
+
+                        <!-- Exibe a mensagem de erro caso as credenciais estejam incorretas -->
+                        <?php if (isset($_GET['error']) && $_GET['error'] == 'invalid_credentials'): ?>
+                            <p style="color: red;">Seu e-mail ou senha está incorreto.</p>
+                        <?php endif; ?>
+
                         <button type="submit" class="auth-button">Entrar</button>
                     </form>
                     <p>Não tem uma conta? <a href="#" id="go-to-register">Registrar-se</a></p>

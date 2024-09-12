@@ -1,0 +1,169 @@
+/* Estilos gerais */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9; /* Fundo modo claro */
+    color: #333333; /* Texto modo claro */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Estilos do menu lateral no modo claro */
+.menu-lateral {
+    width: 250px;
+    background-color: #1E2A5E;
+    color: #E1D7B7;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    position: fixed;
+    height: 100%;
+    overflow-y: auto;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.menu-lateral ul {
+    list-style: none;
+    padding: 8px;
+    margin: 0;
+}
+
+.menu-lateral li {
+    margin-bottom: 10px; /* Adiciona espaço entre os itens da lista, se necessário */
+}
+
+.menu-lateral .logo h2 {
+    font-size: 24px;
+    margin: 0;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #ccc; /* Cor de borda modo claro */
+    color: #fff; /* Texto modo claro */
+}
+
+.menu-lateral a {
+    color: #fff; /* Links modo claro */
+    text-decoration: none;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.menu-lateral a:hover,
+.menu-lateral a.active {
+    background-color: #55679C; /* Fundo hover modo claro */
+    color: #ffffff; /* Texto hover modo claro */
+}
+
+/* Estilos do modo escuro */
+body.dark-theme {
+    background-color: #1c1c1e; /* Fundo modo escuro */
+    color: #f1f1f1; /* Texto modo escuro */
+}
+
+body.dark-theme .menu-lateral {
+    background-color: #222831; /* Fundo menu modo escuro */
+}
+
+body.dark-theme .menu-lateral .logo h2 {
+    border-bottom: 2px solid #76ABAE;
+    color: #f1f1f1;
+}
+
+body.dark-theme .menu-lateral a {
+    color: #f1f1f1; /* Links modo escuro */
+}
+
+body.dark-theme .menu-lateral a:hover,
+body.dark-theme .menu-lateral a.active {
+    background-color: #76ABAE; /* Fundo hover modo escuro */
+    color: #ffffff; /* Texto hover modo escuro */
+}
+
+#theme-toggle {
+    margin-left: auto;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #7C93C3;
+    display: flex;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#theme-toggle:hover {
+    color: #039696;
+    transform: scale(1.1);
+}
+
+body.dark-theme #theme-toggle {
+    color: #76ABAE;
+}
+
+.conteudo-principal {
+    width: calc(100% - 250px);
+    padding: 20px;
+    margin-left: 290px;
+    flex: 1;
+    overflow-y: auto;
+    background-color: #E1D7B7; /* Fundo conteúdo claro */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-theme .conteudo-principal {
+    background-color: #31363F; /* Fundo conteúdo escuro */
+}
+
+.conteudo {
+    display: none; /* Esconde todas as seções por padrão */
+}
+
+.conteudo.ativo {
+    display: block; /* Mostra a seção ativa */
+}
+
+/* Estilos da tabela */
+#tabela-registros {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#tabela-registros thead {
+    background-color: #1E2A5E; 
+    color: #ffffff;
+}
+
+#tabela-registros th, #tabela-registros td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+}
+
+#tabela-registros tr:nth-child(even) {
+    background-color: #7C93C3;
+    color: white;
+}
+
+/* Modo escuro da tabela */
+body.dark-theme #tabela-registros thead {
+    background-color: #76ABAE; /* Fundo cabeçalho modo escuro */
+    color: #EEEEEE; /* Texto cabeçalho modo escuro */
+}
+
+body.dark-theme #tabela-registros th, 
+body.dark-theme #tabela-registros td {
+    border-bottom: 1px solid #555555; /* Borda modo escuro */
+}
+
+body.dark-theme #tabela-registros tr:nth-child(even) {
+    background-color: #222831;
+}

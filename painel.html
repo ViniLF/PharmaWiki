@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Administrativo</title>
+    <link rel="stylesheet" href="css/styles-painel.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <div class="container">
+        <!-- Menu Lateral -->
+        <aside class="menu-lateral">
+            <div class="logo">
+                <!-- Theme Toggle Button -->
+                <button id="theme-toggle" aria-label="Alternar tema">
+                    <span id="light-icon" class="material-symbols-outlined">light_mode</span>
+                    <span id="dark-icon" class="material-symbols-outlined" style="display: none;">dark_mode</span>
+                </button>
+                <h2>Meu Painel</h2>
+            </div>
+            <ul>
+                <li><a href="#" id="dashboard-link">Dashboard</a></li>
+                <li><a href="#" id="registros-link">Registros</a></li>
+            </ul>
+        </aside>
+
+        <!-- Conteúdo Principal -->
+        <main class="conteudo-principal">
+            <div id="dashboard" class="conteudo ativo">
+                <h1>Bem-vindo ao Dashboard</h1>
+                <p>Essa é a sua área de gerenciamento.</p>
+            </div>
+            <div id="registros" class="conteudo">
+                <h1>Lista de Registros</h1>
+                <table id="tabela-registros">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome de Usuário</th>
+                            <th>E-mail</th>
+                            <th>Data de Registro</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Os registros serão carregados aqui via JS -->
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/painel.js"></script>
+</body>
+</html>

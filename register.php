@@ -1,26 +1,22 @@
 <?php
-include 'db.php';
+require_once 'db.php'; // Inclua o arquivo de configuração da conexão
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $stmt = $pdo->prepare("SELECT * FROM users WHERE email = ?");
-    $stmt->execute([$email]);
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    if ($user) {
-        header("Location: tela-de-login.php?error=email_exists");
-        exit;
-    } else {
-        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-
+    try {
+        // Prepare a instrução SQL
         $stmt = $pdo->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
-        $stmt->execute([$username, $email, $hashedPassword]);
+        // Execute a instrução
+        $stmt->execute([$username, $email, $password]);
 
-        header("Location: tela-de-login.php?register=success");
-        exit;
+        // Redireciona para a tela de login
+        header("Location: tela-de-login.php");
+        exit(); // Garante que o script não continue após o redirecionamento
+    } catch (PDOException $e) {
+        echo 'Erro: ' . $e->getMessage();
     }
 }
 ?>

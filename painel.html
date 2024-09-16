@@ -4,8 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Painel Administrativo</title>
-    <link rel="stylesheet" href="css/styles-painel.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="css/styles-painel.css"> 
+    <link rel="stylesheet" href="css/styles-medicamentos.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div class="container">
@@ -22,14 +28,24 @@
             <ul>
                 <li><a href="#" id="dashboard-link">Dashboard</a></li>
                 <li><a href="#" id="registros-link">Registros</a></li>
+                <li><a href="#" id="medicamentos-link">Medicamentos</a></li>
+                <li><a href="#" id="relatorios-link">Relatórios</a></li>
+                <li><a href="#" id="configuracoes-link">Configurações</a></li>
             </ul>
         </aside>
 
         <!-- Conteúdo Principal -->
         <main class="conteudo-principal">
             <div id="dashboard" class="conteudo ativo">
-                <h1>Bem-vindo ao Dashboard</h1>
-                <p>Essa é a sua área de gerenciamento.</p>
+                <div class="card" id="medicamentos-card">
+                    <h3>Total de Medicamentos</h3>
+                    <p id="total-medicamentos">0</p>
+                </div>
+            
+                <div class="card" id="graficos-card">
+                    <h3>Gráficos e Estatísticas</h3>
+                    <canvas id="medicineChart"></canvas>
+                </div>
             </div>
             <div id="registros" class="conteudo">
                 <h1>Lista de Registros</h1>
@@ -47,9 +63,113 @@
                     </tbody>
                 </table>
             </div>
+            <div id="medicamentos" class="conteudo">
+                <h1>Gerenciamento de Medicamentos</h1>
+    
+                <!-- Formulário para Adicionar/Editar Medicamentos -->
+                <div class="formulario-medicamento">
+                    <h2 id="form-title">Adicionar Novo Medicamento</h2>
+                    <form id="medicamento-form" action="adicionar_med.php" method="post">
+                        <input type="hidden" id="medicamento-id" name="id">
+                        <label for="medicamento-nome">Nome:</label>
+                        <input type="text" id="medicamento-nome" name="nome" required>
+                        
+                        <label for="medicamento-dosagem">Dosagem:</label>
+                        <input type="text" id="medicamento-dosagem" name="dosagem" required>
+                        
+                        <label for="medicamento-familia">Família:</label>
+                        <select id="medicamento-familia" name="familia" required>
+                            <option value="">Selecione a Família</option>
+                            <option value="Analgésicos">Analgésicos</option>
+                            <option value="Antibióticos">Antibióticos</option>
+                            <option value="Antivirais">Antivirais</option>
+                            <option value="Anti-inflamatórios">Anti-inflamatórios</option>
+                            <option value="Antifúngicos">Antifúngicos</option>
+                            <option value="Antiparasitários">Antiparasitários</option>
+                            <option value="Antipiréticos">Antipiréticos</option>
+                            <option value="Antidepressivos">Antidepressivos</option>
+                            <option value="Antipsicóticos">Antipsicóticos</option>
+                            <option value="Anticonvulsivantes">Anticonvulsivantes</option>
+                            <option value="Anti-hipertensivos">Anti-hipertensivos</option>
+                            <option value="Antidiabéticos">Antidiabéticos</option>
+                            <option value="Ansiolíticos">Ansiolíticos</option>
+                            <option value="Broncodilatadores">Broncodilatadores</option>
+                            <option value="Anticoagulantes">Anticoagulantes</option>
+                            <option value="Imunossupressores">Imunossupressores</option>
+                        </select>
+                        
+                        <label for="medicamento-bula">Bula PDF:</label>
+                        <input type="file" name="bula_pdf" accept=".pdf" enctype="multipart/form-data">
+                        
+                        <label for="medicamento-tipo">Tipo de Medicamento:</label>
+                        <select id="medicamento-tipo" name="tipo_med" required>
+                            <option value="" disabled selected>Selecione o tipo...</option>
+                            <option value="Comprimido">Comprimido</option>
+                            <option value="Cápsula">Cápsula</option>
+                            <option value="Xarope">Xarope</option>
+                            <option value="Pomada">Pomada</option>
+                            <option value="Injeção">Injeção</option>
+                            <option value="Suspensão">Suspensão</option>
+                            <option value="Solução">Solução</option>
+                            <option value="Creme">Creme</option>
+                            <option value="Gotas">Gotas</option>
+                            <option value="Pó">Pó</option>
+                            <option value="Gel">Gel</option>
+                            <!-- Adicione outras opções conforme necessário -->
+                        </select>
+                        
+                        <label for="medicamento-via">Via de Administração:</label>
+                        <select id="medicamento-via" name="via_administracao" required>
+                            <option value="">Selecione a via de administração</option>
+                            <option value="Via oral">Via oral (boca)</option>
+                            <option value="Via sublingual">Via sublingual (debaixo da língua)</option>
+                            <option value="Via parenteral">Via parenteral (injetável)</option>
+                            <option value="Via cutânea">Via cutânea (pele)</option>
+                            <option value="Via nasal">Via nasal (nariz)</option>
+                            <option value="Via oftálmica">Via oftálmica (olhos)</option>
+                            <option value="Via auricular">Via auricular (ouvidos)</option>
+                            <option value="Via pulmonar">Via pulmonar (respiração/aspiração)</option>
+                            <option value="Via vaginal">Via vaginal (vagina)</option>
+                            <option value="Via retal">Via retal (ânus)</option>
+                        </select>
+
+                        <button type="submit" id="submit-button">Adicionar Medicamento</button>
+                    </form>
+                </div>
+                
+                <!-- Lista de Medicamentos -->
+                <div class="lista-medicamentos">
+                    <h2>Medicamentos Cadastrados</h2>
+                    <table id="tabela-medicamentos">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nome</th>
+                                <th>Dosagem</th>
+                                <th>Família</th>
+                                <th>Bula</th>
+                                <th>Tipo</th>
+                                <th>Via de Administração</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Os medicamentos serão carregados aqui via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div id="relatorios" class="conteudo">
+                <h1>Relatórios</h1>
+                <p>Visualize relatórios detalhados sobre o uso de medicamentos e registros.</p>
+            </div>
+            <div id="configuracoes" class="conteudo">
+                <h1>Configurações do Sistema</h1>
+                <p>Ajuste as configurações gerais do sistema, como temas e preferências de conta.</p>
+            </div>
         </main>
     </div>
-
+    <div id="message-container" style="display: none;"></div>
     <script src="js/painel.js"></script>
 </body>
 </html>

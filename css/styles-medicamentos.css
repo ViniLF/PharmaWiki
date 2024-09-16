@@ -1,0 +1,109 @@
+/* styles-medicamentos.css */
+
+.conteudo {
+    padding: 20px;
+}
+
+.formulario-medicamento {
+    margin-bottom: 20px;
+}
+
+.formulario-medicamento form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.formulario-medicamento label {
+    font-weight: bold;
+}
+
+.formulario-medicamento input, 
+.formulario-medicamento textarea, 
+.formulario-medicamento select {
+    padding: 10px;
+    border: 1px solid #0391AE; /* Borda ajustada para #0391AE */
+    border-radius: 5px;
+    background-color: #ffffff; /* Fundo claro */
+    color: #007087; /* Texto */
+}
+
+option {
+    font-size: 12px; /* Aplica um tamanho de fonte menor */
+}
+
+textarea {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none; /* Evita que o usuário redimensione manualmente */
+    overflow: hidden; /* Remove a barra de rolagem */
+}
+
+.lista-medicamentos {
+    margin-top: 20px;
+}
+
+.lista-medicamentos table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.lista-medicamentos th, 
+.lista-medicamentos td {
+    border: 1px solid #007087; /* Borda ajustada para #007087 */
+    padding: 10px;
+    text-align: center;
+}
+
+.lista-medicamentos th {
+    background-color: #0391AE; /* Fundo do cabeçalho da tabela */
+    color: #ffffff; /* Texto branco */
+}
+
+.lista-medicamentos td {
+    background-color: #f9f9f9; /* Fundo claro das células */
+    color: #007087; /* Texto */
+}
+
+.lista-medicamentos .editar, 
+.lista-medicamentos .excluir {
+    background-color: #007087; /* Botão editar com fundo azul */
+    color: #ffffff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.lista-medicamentos .excluir {
+    background-color: #C4122E; /* Botão excluir com fundo vermelho */
+}
+
+.lista-medicamentos .editar:hover,
+.lista-medicamentos .excluir:hover {
+    opacity: 0.8;
+}
+
+#submit-button {
+    background-color: #CB354C; /* Cor de fundo principal (vermelho) */
+    color: white; /* Cor do texto */
+    border: none; /* Remove borda */
+    padding: 12px 24px; /* Espaçamento interno */
+    text-align: center; /* Alinhamento do texto */
+    font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+    border-radius: 8px; /* Bordas arredondadas */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transição suave */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+#submit-button:hover {
+    background-color: #C4122E; /* Cor ao passar o mouse */
+    transform: scale(1.02); /* Leve efeito de zoom ao passar o mouse */
+}
+
+#submit-button:active {
+    background-color: #CB354C; /* Cor ao clicar */
+    transform: scale(0.98); /* Leve efeito de compressão ao clicar */
+}

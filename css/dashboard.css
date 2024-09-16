@@ -1,0 +1,35 @@
+#dashboard {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background-color: #ffffff;
+    border: 2px solid #007087;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#medicamentos-card h3, #graficos-card h3 {
+    color: #007087;
+    margin-bottom: 15px;
+}
+
+#total-medicamentos {
+    font-size: 36px;
+    font-weight: bold;
+    color: #0391AE;
+}
+
+#graficos-card canvas {
+    max-width: 100%;
+    height: 200px;
+}

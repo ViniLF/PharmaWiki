@@ -1,4 +1,8 @@
 /* Estilos gerais */
+* {
+    font-family: "Poppins", sans-serif;
+}
+
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -17,8 +21,8 @@ body {
 /* Estilos do menu lateral no modo claro */
 .menu-lateral {
     width: 250px;
-    background-color: #1E2A5E;
-    color: #E1D7B7;
+    background-color: #007087; /* Cor primária */
+    color: #ffffff; /* Cor do texto */
     display: flex;
     flex-direction: column;
     padding: 20px;
@@ -36,19 +40,19 @@ body {
 }
 
 .menu-lateral li {
-    margin-bottom: 10px; /* Adiciona espaço entre os itens da lista, se necessário */
+    margin-bottom: 10px; /* Espaço entre itens */
 }
 
 .menu-lateral .logo h2 {
     font-size: 24px;
     margin: 0;
     padding-bottom: 15px;
-    border-bottom: 2px solid #ccc; /* Cor de borda modo claro */
-    color: #fff; /* Texto modo claro */
+    border-bottom: 2px solid #0391AE; /* Cor de borda modo claro */
+    color: #ffffff; /* Texto modo claro */
 }
 
 .menu-lateral a {
-    color: #fff; /* Links modo claro */
+    color: #ffffff; /* Links modo claro */
     text-decoration: none;
     display: block;
     padding: 10px 15px;
@@ -59,11 +63,11 @@ body {
 
 .menu-lateral a:hover,
 .menu-lateral a.active {
-    background-color: #55679C; /* Fundo hover modo claro */
+    background-color: #0391AE; /* Fundo hover modo claro */
     color: #ffffff; /* Texto hover modo claro */
 }
 
-/* Estilos do modo escuro */
+/* Modo escuro */
 body.dark-theme {
     background-color: #1c1c1e; /* Fundo modo escuro */
     color: #f1f1f1; /* Texto modo escuro */
@@ -88,19 +92,20 @@ body.dark-theme .menu-lateral a.active {
     color: #ffffff; /* Texto hover modo escuro */
 }
 
+/* Botão de alternância de tema */
 #theme-toggle {
     margin-left: auto;
     background: none;
     border: none;
     cursor: pointer;
     font-size: 24px;
-    color: #7C93C3;
+    color: #17a0bb;
     display: flex;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
 #theme-toggle:hover {
-    color: #039696;
+    color: #014653;
     transform: scale(1.1);
 }
 
@@ -108,13 +113,14 @@ body.dark-theme #theme-toggle {
     color: #76ABAE;
 }
 
+/* Estilos do conteúdo principal */
 .conteudo-principal {
     width: calc(100% - 250px);
     padding: 20px;
     margin-left: 290px;
     flex: 1;
     overflow-y: auto;
-    background-color: #E1D7B7; /* Fundo conteúdo claro */
+    background-color: #ffffff; /* Fundo conteúdo claro */
     transition: background-color 0.3s, color 0.3s;
 }
 
@@ -122,6 +128,7 @@ body.dark-theme .conteudo-principal {
     background-color: #31363F; /* Fundo conteúdo escuro */
 }
 
+/* Seções de conteúdo */
 .conteudo {
     display: none; /* Esconde todas as seções por padrão */
 }
@@ -138,7 +145,7 @@ body.dark-theme .conteudo-principal {
 }
 
 #tabela-registros thead {
-    background-color: #1E2A5E; 
+    background-color: #007087; /* Cor cabeçalho modo claro */
     color: #ffffff;
 }
 
@@ -149,7 +156,7 @@ body.dark-theme .conteudo-principal {
 }
 
 #tabela-registros tr:nth-child(even) {
-    background-color: #7C93C3;
+    background-color: #0391AE; /* Cor para linhas pares modo claro */
     color: white;
 }
 

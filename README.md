@@ -17,5 +17,3 @@ Para mais informações ou dúvidas, você pode entrar em contato através das s
 
 - **Email:** [vinihlucas90@gmail.com](mailto:vinihlucas90@gmail.com)
 - **LinkedIn:** [Vinicius Lucas Faria](https://www.linkedin.com/in/viniciuslucasfaria/)
-
-Video: https://www.youtube.com/watch?v=15CXhnQkilY&list=PLSHNk_yA5fNjoIRNHV-3FprsN3NWPcnnK&index=4

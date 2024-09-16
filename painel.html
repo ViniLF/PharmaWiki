@@ -55,6 +55,7 @@
                             <th>ID</th>
                             <th>Nome de Usuário</th>
                             <th>E-mail</th>
+                            <th>Nivel de Acesso</th>
                             <th>Data de Registro</th>
                         </tr>
                     </thead>
@@ -69,7 +70,7 @@
                 <!-- Formulário para Adicionar/Editar Medicamentos -->
                 <div class="formulario-medicamento">
                     <h2 id="form-title">Adicionar Novo Medicamento</h2>
-                    <form id="medicamento-form" action="adicionar_med.php" method="post">
+                    <form id="medicamento-form" action="php/medicamentos/adicionar_med.php" method="post">
                         <input type="hidden" id="medicamento-id" name="id">
                         <label for="medicamento-nome">Nome:</label>
                         <input type="text" id="medicamento-nome" name="nome" required>
@@ -81,12 +82,13 @@
                         <select id="medicamento-familia" name="familia" required>
                             <option value="">Selecione a Família</option>
                             <option value="Analgésicos">Analgésicos</option>
+                            <option value="Analgésicos e Antitérmicos">Analgésicos e Antitérmicos</option>
                             <option value="Antibióticos">Antibióticos</option>
                             <option value="Antivirais">Antivirais</option>
                             <option value="Anti-inflamatórios">Anti-inflamatórios</option>
                             <option value="Antifúngicos">Antifúngicos</option>
                             <option value="Antiparasitários">Antiparasitários</option>
-                            <option value="Antipiréticos">Antipiréticos</option>
+                            <option value="Antipiréticos">Antitérmicos</option>
                             <option value="Antidepressivos">Antidepressivos</option>
                             <option value="Antipsicóticos">Antipsicóticos</option>
                             <option value="Anticonvulsivantes">Anticonvulsivantes</option>
@@ -115,6 +117,16 @@
                             <option value="Gotas">Gotas</option>
                             <option value="Pó">Pó</option>
                             <option value="Gel">Gel</option>
+                            <option value="Adesivo Transdérmico">Adesivo Transdérmico</option>
+                            <option value="Supositório">Supositório</option>
+                            <option value="Enema">Enema</option>
+                            <option value="Spray Nasal">Spray Nasal</option>
+                            <option value="Colírio">Colírio</option>
+                            <option value="Pomada Oftálmica">Pomada Oftálmica</option>
+                            <option value="Gotas Auriculares">Gotas Auriculares</option>
+                            <option value="Inalador">Inalador</option>
+                            <option value="Nebulizador">Nebulizador</option>
+                            <option value="Sublingual">Sublingual</option>                           
                             <!-- Adicione outras opções conforme necessário -->
                         </select>
                         
@@ -168,6 +180,26 @@
                 <p>Ajuste as configurações gerais do sistema, como temas e preferências de conta.</p>
             </div>
         </main>
+        <!-- Formulário de Edição -->
+        <div id="form-editar">
+            <h2 id="form-title-editar">Editar Medicamento</h2>
+            <form id="form-editar">
+                <input type="hidden" id="medicamento-id" name="id">
+                <label for="medicamento-nome">Nome:</label>
+                <input type="text" id="medicamento-nome" name="nome" required>
+                <label for="medicamento-dosagem">Dosagem:</label>
+                <input type="text" id="medicamento-dosagem" name="dosagem" required>
+                <label for="medicamento-familia">Família:</label>
+                <input type="text" id="medicamento-familia" name="familia" required>
+                <label for="medicamento-bula">Bula PDF:</label>
+                <input type="file" id="medicamento-bula" name="bula_pdf" accept=".pdf">
+                <label for="medicamento-tipo">Tipo:</label>
+                <input type="text" id="medicamento-tipo" name="tipo_med" required>
+                <label for="medicamento-via">Via de Administração:</label>
+                <input type="text" id="medicamento-via" name="via_administracao" required>
+                <button type="button" onclick="salvarEdicao()">Salvar</button>
+            </form>
+        </div>
     </div>
     <div id="message-container" style="display: none;"></div>
     <script src="js/painel.js"></script>

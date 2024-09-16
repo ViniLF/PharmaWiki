@@ -1,6 +1,6 @@
 // ver_bula.php
 <?php
-require_once 'db.php'; // Inclua a conexão com o banco de dados
+require_once '../db.php';
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];

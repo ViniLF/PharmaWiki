@@ -1,5 +1,5 @@
 <?php
-require_once 'db.php'; // Inclua o arquivo de configuração da conexão
+require_once 'php/db.php'; // Inclua o arquivo de configuração da conexão
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];

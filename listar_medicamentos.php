@@ -1,11 +1,12 @@
 <?php
-require_once 'db.php'; // Inclua o arquivo de conexão com o banco de dados
+require_once 'php/db.php'; // Subindo um nível para acessar 'db.php'
 
 header('Content-Type: application/json');
 
 if ($conn) {
-    $query = "SELECT id, nome, dosagem, familia, tipo_med, via_administracao FROM medicamentos";
-    $result = $conn->query($query);
+    // Adiciona o campo bula_pdf na consulta
+    $sql = "SELECT id, nome, dosagem, familia, bula_pdf, tipo_med, via_administracao FROM medicamentos";
+    $result = $conn->query($sql);
 
     if ($result) {
         $medicamentos = $result->fetch_all(MYSQLI_ASSOC);

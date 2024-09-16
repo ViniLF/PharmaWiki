@@ -1,7 +1,7 @@
 <?php
 session_start(); // Inicie a sessão
 
-require_once 'db.php'; // Inclua o arquivo de conexão com o banco de dados
+require_once '../db.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nome = isset($_POST['nome']) ? $_POST['nome'] : '';
@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $bula_pdf = $fileName; // Salva o nome do arquivo no banco de dados
         } else {
             $_SESSION['error_message'] = "Erro ao salvar o arquivo PDF.";
-            header('Location: painel.html');
+            header('Location: /pharmawiki/painel.html');
             exit();
         }
     } else {
@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($stmt === false) {
             $_SESSION['error_message'] = "Erro na preparação da instrução SQL: " . $conn->error;
             $conn->close();
-            header('Location: painel.html');
+            header("Location: /pharmawiki/painel.html");
             exit();
         }
 
@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Redireciona para a página principal
-    header('Location: painel.html');
+    header('Location: /pharmawiki/painel.html');
     exit();
 }
 ?>

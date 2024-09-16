@@ -107,3 +107,7 @@ textarea {
     background-color: #CB354C; /* Cor ao clicar */
     transform: scale(0.98); /* Leve efeito de compressão ao clicar */
 }
+
+#form-editar {
+    display: none; /* Oculta o formulário por padrão */
+}
